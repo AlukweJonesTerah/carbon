@@ -1,29 +1,10 @@
 {
-  "dependencies": {
-    "multer": "^1.4.5-lts.1"
-  },
+  "name": "hardhat-project",
   "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
-    "@types/multer": "^1.4.12",
-    "@types/node": "^22.5.3",
-    "ethers": "^6.0.0",
-    "hardhat": "^2.22.10",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "hardhat": "^2.22.10"
   },
-  "name": "carbon",
-  "description": "��#\u0000 \u0000c\u0000a\u0000r\u0000b\u0000o\u0000n\u0000\r\u0000 \u0000",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }
