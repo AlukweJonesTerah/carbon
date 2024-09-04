@@ -7,7 +7,7 @@ contract UserRegistry {
     mapping(address => uint256) public userIds;
     mapping(address => Role) public userRoles;
     uint256 public nextUserId;
-    
+
     address public admin;
 
     event UserRegistered(address indexed user, uint256 userId, Role role);
@@ -24,11 +24,13 @@ contract UserRegistry {
     }
 
     constructor() {
-        admin = msg.sender;  // Set the contract creator as the admin
+        admin = msg.sender; // Set the contract creator as the admin
     }
 
-    function registerUser(Role role) external onlyRole(Role.None) {
+    function registerUser(Role role) external {
+        require(userRoles[msg.sender] == Role.None, "User already registered");
         require(role != Role.None, "Invalid role for registration");
+        require(msg.sender != admin, "Admin cannot register as a regular user"); // Prevent admin from registering
 
         nextUserId++;
         userIds[msg.sender] = nextUserId;
@@ -39,7 +41,8 @@ contract UserRegistry {
     function assignRole(address user, Role role) external onlyAdmin {
         require(user != address(0), "Invalid address");
         require(role != Role.None, "Invalid role");
-        
+        require(userRoles[user] != role, "User already has this role"); // Check if the user already has this role
+
         userRoles[user] = role;
         emit RoleAssigned(user, role);
     }

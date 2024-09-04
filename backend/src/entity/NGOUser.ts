@@ -16,7 +16,7 @@ export class NGOUser extends BaseUser{
     address!: string;
 
     @Column({ length: 100, unique: true })
-    projectNamer!: string;
+    projectName!: string;
 
     @Column({ length: 255 })
     projectDescription!: string;

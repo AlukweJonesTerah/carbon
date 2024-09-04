@@ -1,0 +1,15 @@
+npm cache clean --force
+
+
+npx hardhat
+npm install --save-dev typescript ts-node @types/node
+
+npm install --save-dev hardhat @nomiclabs/hardhat-ethers ethers --legacy-peer-deps
+npm install ethers
+npm install --save-dev hardhat @nomiclabs/hardhat-ethers@2.2.3 ethers@5.7.2
+npm install -g yarn
+yarn add --dev hardhat @nomiclabs/hardhat-ethers ethers
+npm install --save-dev hardhat @nomiclabs/hardhat-ethers@2.2.3 ethers@5.7.2
+
+npx hardhat compile
+npx hardhat run scripts/deploy.js --network holesky

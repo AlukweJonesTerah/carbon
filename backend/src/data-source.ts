@@ -26,6 +26,9 @@ import { GovernmentUser } from "./entity/GovernmentUser";
 import { IndustryUser } from "./entity/IndustryUser";
 import { NGOUser } from "./entity/NGOUser";
 import { IndividualUser } from "./entity/IndividualUser";
+import { KYCSubmission } from "./entity/KYCSubmission";
+import { Emission } from "./entity/Emission";
+
 
 // export const AppDataSource = new DataSource({
 //   type: "sqlite",
@@ -42,7 +45,7 @@ export const AppDataSource = new DataSource({
     database: "./db/cc.sqlite",
     synchronize: true, // Change to false in production
     logging: true, // Enable for development
-    entities: [BaseUser,GovernmentUser, IndustryUser, NGOUser, IndividualUser],
+    entities: [BaseUser,GovernmentUser, IndustryUser, NGOUser, IndividualUser, KYCSubmission, Emission],
     migrations: ["./migration/*.ts"], // Adjust as needed
     subscribers: ["./subscribers/*.ts"], // Adjust as needed
   });
